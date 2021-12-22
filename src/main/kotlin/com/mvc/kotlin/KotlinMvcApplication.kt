@@ -8,4 +8,6 @@ class KotlinMvcApplication
 
 fun main(args: Array<String>) {
     runApplication<KotlinMvcApplication>(*args)
+
+    println("hello Kotlin ?:)")
 }
