@@ -7,7 +7,12 @@ import java.lang.Exception
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.validation.constraints.*
-
+/*
+ @field annotation 을 쓰는 이유
+    생성자 메서드 안에 annotation 을 붙이면 validation 이 동작하지 않기 때문이다.
+    명시적으로 프로퍼티에 적용하겠다는 kotlin 의 annotation @field, @get, @set 을 사용 할 수 있다.
+    자세히 알고 싶으면 : kotlin bean validation not working 으로 검색해 보자.
+ */
 data class UserRequest(
     @field:NotEmpty
     @field:Size(min = 2, max = 8)
