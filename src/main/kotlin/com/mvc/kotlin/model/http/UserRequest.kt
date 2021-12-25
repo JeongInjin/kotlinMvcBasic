@@ -8,6 +8,7 @@ import java.lang.Exception
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.validation.constraints.*
+
 /*
  @field annotation 을 쓰는 이유
     생성자 메서드 안에 annotation 을 붙이면 validation 이 동작하지 않기 때문이다.
@@ -17,20 +18,20 @@ import javax.validation.constraints.*
 data class UserRequest(
     @field:NotEmpty
     @field:Size(min = 2, max = 8)
-    var name : String? = null,
+    var name: String? = null,
 
     @field:PositiveOrZero // 0 <= 숫자 검증 (양수)
-    var age : Int? = null,
+    var age: Int? = null,
 
     @field:Email
-    var email : String? = null,
+    var email: String? = null,
 
     @field:NotBlank
-    var address : String? = null,
+    var address: String? = null,
 
     @field:Pattern(regexp = "^\\d{2,3}-\\d{3,4}-\\d{4}\$")
     @JsonProperty("phone_number")
-    var phoneNumber : String? = null,
+    var phoneNumber: String? = null,
 
     @field: StringFormatDateTime(pattern = "yyyy-MM-dd HH:mm:ss", message = "패턴이 올바르지 않습니다.")
     var createdAt: String? = null,

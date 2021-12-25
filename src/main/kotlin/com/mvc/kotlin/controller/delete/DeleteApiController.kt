@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.*
 class DeleteApiController {
 
     @DeleteMapping(path = ["/delete-mapping"])
-    fun deleteMapping(@RequestParam name : String, age : Int) : String{
+    fun deleteMapping(@RequestParam name: String, age: Int): String {
         return "${name} ${age}"
     }
 
     @DeleteMapping(path = ["/delete-mapping/name/{name}/age/{age}"])
-    fun deleteMappingpath(@PathVariable(name = "name") _name : String, @PathVariable (name="age")_age : Int) : String{
+    fun deleteMappingpath(@PathVariable(name = "name") _name: String, @PathVariable(name = "age") _age: Int): String {
         return "${_name} ${_age}"
     }
 }

@@ -7,9 +7,9 @@ import java.time.format.DateTimeFormatter
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 
-class StringFormatDateTimeValidator: ConstraintValidator<StringFormatDateTime, String> {
+class StringFormatDateTimeValidator : ConstraintValidator<StringFormatDateTime, String> {
 
-    private var pattern: String?=null
+    private var pattern: String? = null
 
     override fun initialize(constraintAnnotation: StringFormatDateTime?) {
         this.pattern = constraintAnnotation?.pattern
@@ -19,7 +19,7 @@ class StringFormatDateTimeValidator: ConstraintValidator<StringFormatDateTime, S
         return try {
             LocalDateTime.parse(value, DateTimeFormatter.ofPattern(pattern))
             true
-        }catch (e: Exception){
+        } catch (e: Exception) {
             false
         }
     }

@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.*
 class ResponseApiController {
     // 1.get 4XX
     @GetMapping("")
-    fun getMapping(@RequestParam age : Int?) : ResponseEntity<String> {
+    fun getMapping(@RequestParam age: Int?): ResponseEntity<String> {
         // 1. age가 null -> 400 error
         // if(age == null) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("fail")
         // 2. age < 20 -> 400 error
         // if(age < 20) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("fail")
 
         return age?.let {
-            if(age < 20) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("age 값은 20보다 커야 합니다.")
+            if (age < 20) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("age 값은 20보다 커야 합니다.")
             ResponseEntity.ok("OK")
-        }?: kotlin.run {
+        } ?: kotlin.run {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("age 값이 누락되었습니다.")
         }
     }
 
     // 2.post 200
     @PostMapping("")
-    fun postMapping(@RequestBody userRequest : UserRequest?): ResponseEntity<Any> {
+    fun postMapping(@RequestBody userRequest: UserRequest?): ResponseEntity<Any> {
         return ResponseEntity.status(200).body(userRequest)
     }
 
