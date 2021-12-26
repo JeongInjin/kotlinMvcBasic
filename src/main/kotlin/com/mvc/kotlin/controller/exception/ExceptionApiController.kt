@@ -1,11 +1,10 @@
-package com.mvc.kotlin.controller
+package com.mvc.kotlin.controller.exception
 
 import com.mvc.kotlin.model.http.Error
 import com.mvc.kotlin.model.http.ErrorResponse
 import com.mvc.kotlin.model.http.UserRequest
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.validation.BindingResult
 import org.springframework.validation.FieldError
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.MethodArgumentNotValidException
