@@ -105,6 +105,13 @@ class ExceptionApiController {
         val temp = list[0]
     }
 
+    @GetMapping("/hello-test")
+    fun helloTest(): String{
+        var list = mutableListOf<String>()
+
+        return "hello-test"
+    }
+
     @ExceptionHandler(value = [IndexOutOfBoundsException::class])
     fun indexOutOfBoundsException(e: IndexOutOfBoundsException): ResponseEntity<String> {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Index ERROR")
