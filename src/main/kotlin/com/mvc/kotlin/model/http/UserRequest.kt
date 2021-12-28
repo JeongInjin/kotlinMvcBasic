@@ -1,12 +1,7 @@
 package com.mvc.kotlin.model.http
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.PropertyNamingStrategy
-import com.fasterxml.jackson.databind.annotation.JsonNaming
 import com.mvc.kotlin.annotation.StringFormatDateTime
-import java.lang.Exception
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import javax.validation.constraints.*
 
 /*
@@ -33,7 +28,8 @@ data class UserRequest(
     @JsonProperty("phone_number")
     var phoneNumber: String? = null,
 
-    @field: StringFormatDateTime(pattern = "yyyy-MM-dd HH:mm:ss", message = "패턴이 올바르지 않습니다.")
+//    @field: StringFormatDateTime(pattern = "yyyy-MM-dd HH:mm:ss", message = "패턴이 올바르지 않습니다.")
+    @field: StringFormatDateTime
     var createdAt: String? = null,
 )
 /*
